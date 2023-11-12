@@ -1,0 +1,153 @@
+
+.process-num{
+    width: 4em;
+    height: 4em;
+    background-color: #FEEFED;
+    border: 4px solid #FA9EA9;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 1em;
+    font-style: bold;
+}
+
+.web-topic {
+    display: flex;
+    flex-direction: row;
+    padding: 1em
+}
+
+.web-topic label {
+    font-size: 2em;
+    text-align: center;
+    margin-left: 2em;
+}
+
+.index-body{
+    margin: 0px;
+}
+
+.index-context {
+    margin: 0px;
+    padding: 1em;
+}
+.index-body .index-context:nth-child(odd){
+    background-color: #FDF7E7;
+}
+
+.index-body .index-context:nth-child(even) {
+    background-color: #FAEEC8;
+}
+
+
+
+#home-text{
+    font-weight: bold;
+    font-size: 384%;
+    text-align: center;
+}
+
+#news-text{
+    font-weight: bold;
+    font-size: 312%;
+    z-index: 1;
+    position:absolute;
+    padding:8%
+}
+
+#changelog-button{
+  height:50vh;
+  width:95vw;
+  background-image: url("../static/news.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:0;
+  padding: 0;
+}
+
+#events-button{
+  height:50vh;
+  width:95vw;
+  background-image: url("../static/events.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:0;
+  padding: 0;
+}
+
+#grad {
+    background-image: linear-gradient(to right, #fa9ea9 ,#faeec838,#faeec800);
+    color:black;
+    border:0;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+#grad-img{
+    object-fit: cover;
+    width: 100vw;
+    z-index: 0;
+}
+
+  #start-button{
+    background-color: #43888F;
+    color: #FDF7E7;
+    border: 0;
+    border-radius: 2vw;
+    margin: 0 auto;
+    /* margin: 2%; */
+    padding: 2%;
+    font-weight: bold;
+    font-size:212%;
+  }
+
+  #start-image{
+    height:50vh;
+    background: url("../static/chart_pieStart.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+
+  #start-image-cover {
+    background-color: #fa9ea9;
+    background: linear-gradient(to right, #fa9ea9 ,#faeec800,#faeec87e);
+    overflow: hidden;
+    height: 100%;
+    margin:0;
+
+  }
+
+  #start-heading{
+    font-size:512%;
+    font-weight: bold;
+    text-wrap: wrap;
+    width:70vw;
+    position:absolute;
+    z-index: 5;
+  }
+
+  #cards{
+    padding:0;
+    border:0;
+    border-radius: 4vw;
+    background-color: #43888F;
+    flex-direction: column;
+    margin: 2%;
+    width: 22%;
+    align-items: center;
+    color:white;
+    font-weight: bold;
+  }
+  #card-img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 4vw 4vw 0vw 0vw;
+}
+  
+  #card-list{
+    display: flex;
+    justify-content: space-around;
+  }

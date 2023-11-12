@@ -1,0 +1,128 @@
+body {
+    margin: var(--bs-gutter-x,.75rem),;
+    font-family: "Inter-Regular", Helvetica;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+code {
+  font-family: "Inter-Regular", Helvetica;
+}
+
+nav {
+  padding-right: .75rem !important;
+  padding-left: .75rem !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.heart {
+  color: #ff0000;
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.header {
+  background: #43888F;
+}
+
+.context {
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+}
+
+.footer {
+  background: #D1EAEC;
+  padding: 2.5%;
+}
+
+.footer h1 {
+  background: #43888F;
+  color: white;
+  flex-shrink: 0;
+  margin: -2.5%;
+  padding: 2.5%;
+  margin-bottom: 3%;
+  font-size: 25px;
+}
+
+.footer-card {
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: #FDF7E7;
+  margin-left: 0%;
+  width: 90%;
+  padding: 2.5%;
+}
+
+.footer-card label {
+  font-size: 1.5rem;
+}
+
+.viztastic-logo {
+  background-image: url("../static/Logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 30px;
+}
+@media screen and (max-width: 450px){
+  .viztastic-logo {
+    background-image: url("../static/Logo_small.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 30px;
+  }
+}
+
+.home-context div{
+  padding: 1em;
+}
+
+.home-context div:nth-child(odd) {
+  background-color: #FAEEC8;
+}
+
+.home-context div:nth-child(even) {
+  background-color: #FDF7E7;
+}
+
+#mainDiv{
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+}
+#subDiv{
+  padding: 1em;
+  text-align: center;
+}
+

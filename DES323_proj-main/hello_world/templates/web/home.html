@@ -1,0 +1,61 @@
+{% extends 'web/layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class = "index-body">
+    <h1 id="start-heading">
+        Visualize your data with the best tool in the world
+    </h1>
+    <div class = "index-context" id = "grad">
+        <div id="start-image" alt="#"><div id="start-image-cover"></div></div> 
+    </div>
+
+    <div id="subDiv" class="index-context">
+        <button id="start-button" onClick="console.log('Hello World')">
+            Let's Get Start
+        </button>
+    </div>
+
+    <div class = "index-context">
+        <h1 id="home-text">
+            NEWS
+        </h1>
+            
+                <button id="changelog-button" onClick="console.log('Hello World')">
+                    <h1  id="news-text">Changelog</h1>
+                    <div id="start-image-cover"></div>
+                </button>
+
+                <button id="events-button" onClick="console.log('Hello World')">
+                    <h1  id="news-text">Events</h1>
+                    <div id="start-image-cover"></div>
+                </button>
+            
+    </div>
+    <div class = "index-context">
+        <h1 id="home-text">
+            Our Charts
+        </h1>
+        <div id="card-list">
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_scatter.png" alt="#">Scatter Plot</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_histogram.png" alt="#">Histogram</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_circle.png" alt="#">Pie Chart</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_line.png" alt="#">Line Chart</button></div>
+    </div>
+    <div class = "index-context">
+        <h1 id="home-text">
+            Learn With Us
+        </h1>
+        <div id="card-list">
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_horbar.jpg" alt="#">Horizontal Histogram</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_map.png" alt="#">Map Chart</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_bubble.png" alt="#">Bubble Chart</button>
+            <button id="cards" onClick="console.log('Hello World')"><img id="card-img" src="static/chart_box.png" alt="#">Box Chart</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+{% block title %}
+Let's goooooooo
+{% endblock %}
+{% block content %}
+
+
+<body>
+    <div class = "index-body">
+        <div class = "index-context setting-context">
+            <h1 class = "container-fluid">Setting</h1>
+            <h2>My Account Information</h2>
+            
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Account</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Edit/Delete</th>
+                    </tr>
+                {% for row in datasets %}
+                    <tr>
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.first_name }}</td>
+                        <td>{{ row.last_name }}</td>
+                        <td>{{ row.account }}</td>
+                        <td>{{ row.email }}</td>
+                        <td>{{ row.password }}</td>
+                        <td>
+                            <a href="/database/name/edit/{{ row.id }}">Edit</a>
+                            <a href="/database/name/del/{{ row.id }}">Delete</a>
+                           
+                            </td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    
+    
+    
+   
+{% endblock %}

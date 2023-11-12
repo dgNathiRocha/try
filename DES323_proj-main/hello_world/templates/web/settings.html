@@ -1,0 +1,95 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+{% block title %}
+Setting
+{% endblock %}
+{% block content %}
+
+<!-- may be we have to use form for input value in editing-->
+<body>
+    <div class = "index-body">
+        <div class = "index-context setting-context">
+            <h1 class = "container-fluid">Setting</h1>
+            <h2>My Account</h2>
+            
+            <table border="1">
+                <tr>
+                    <th>NAME</th>
+                    <th>DATE</th>
+                    <th>TYPES OF VISUALIZATION</th>
+                    <th>Delete</th>
+                </tr>
+                {% for row in datasets %}
+                <tr>
+                    <td class = "underlined" onClick="console.log('Hello World')">{{ row.proj_name }}</td>
+                    <td>{{ row.Date }}</td>
+                    <td>{{ row.type_v }}</td>
+                   
+                    <td><button onclick="console.log('Delete Dataset')">Delete</button></td>
+                </tr>
+               
+                {% endfor %}
+         <!--     <tr>
+                    <td class = "underlined" onClick="console.log('Hello World')">{{ row.proj_name }}s</td>
+                    <td>{{ row.Date }}</td>
+                    <td>{{ row.type_v }}</td>
+                    <td><button onclick="console.log('Delete Dataset')">Delete</button></td>
+                </tr>-->  
+                
+            </table>
+        </div>
+    
+    
+    
+    <div class = "index-context setting-context">
+        <h2>Change Your Name</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="item_id" value="{{ item_id }}">
+            <div class = "input">
+                <label for="first_name">First Name</label>
+                <input value="{{form_data.first_name}}" class = input-container type="text" placeholder="Enter text" name="first_name">
+            </div>
+            <div class = "input">
+                <label for="last_name">Last Name</label>
+                <input value="{{form_data.last_name}}" class = input-container type="text" placeholder="Enter text" name="last_name">
+            </div>
+            <div class = "input">
+                <label for="account">Account</label>
+                <input value="{{form_data.account}}" class = input-container type="text" placeholder="Enter text" name="account">
+            </div>   
+            <div class = "input">
+                <label for="email">Email</label>
+                <input value="{{form_data.email}}" class = input-container type="text" placeholder="Enter text" name="email">
+            </div>   
+            
+        </div>
+    
+    
+    
+    
+        <div class = "index-context setting-context">
+            <h2>Change your Password</h2>
+        
+            <div class = "input">
+                <label for="password">Old Password</label>
+                <input value="{{form_data.password}}" class = input-container type="text" placeholder="Enter text" name="password">
+            </div>
+            <div class = "input">
+                <label for="password">New Password</label>
+                <input value="{{form_data.password}}" class = input-container type="text" placeholder="Enter text" name="password">
+            </div>   
+            <div class = "setting-notice">
+                <p>* Please note after changing your password, you must log back in</p>
+                <div class = "passChange">
+                    <button style = "background-color: #43888F;" onClick="console.log('Change Password')">Apply</button>
+                    <button style = "background-color: #ED7A88;" onClick="console.log('Clear Data')">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+    
+</body>
+
+{% endblock %}

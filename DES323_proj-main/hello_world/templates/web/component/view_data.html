@@ -1,0 +1,14 @@
+<!-- view_data.html -->
+{% extends 'web/layout.html' %}
+{% block title %}
+View Dataset
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>View Dataset</h2>
+    <div>
+        {{ table_html | safe }}
+    </div>
+</div>
+{% endblock %}

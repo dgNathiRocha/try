@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Showing {{ filter_type }} </h1>
+    <table class="table table-striped table-hover">
+        <tr>
+        <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Account</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    {% for row in datasets %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.first_name }}</td>
+            <td>{{ row.last_name }}</td>
+            <td>{{ row.account }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.password }}</td>
+        
+        </tr>
+    {% endfor %}
+</table>
+</div>
