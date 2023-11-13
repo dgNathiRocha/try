@@ -1,0 +1,34 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+
+<body>
+    <div class = "index-body">
+        <div class = "index-context setting-context">
+            <h1>Sign up</h1>
+
+            <form action="/signin" method="post">
+                {% csrf_token %}
+                
+                <div class = "input">
+                    <label for="account">Username</label>
+                    <input id="account" class = input-container type="text" placeholder="Enter username" name="account" Required>
+                </div>
+                 
+                <div class = "input">
+                    <label for="password">Password</label>
+                    <input id="password" class = input-container type="password" placeholder="Enter password" name="password" Required>
+                </div>
+                <div class = "passChange">
+                    <button style = "background-color: #43888F;" 
+                        onClick="console.log('Logging In')">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

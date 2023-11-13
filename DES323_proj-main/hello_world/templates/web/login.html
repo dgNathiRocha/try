@@ -11,27 +11,27 @@ Login
         <div class = "index-context setting-context">
             <h1>Sign up</h1>
 
-            <form action="" method="post">
+            <form action="/signup" method="post">
                 {% csrf_token %}
                 <div class = "input">
                     <label for="first_name">First Name</label>
-                    <input value="{{form_data.first_name}}" class = input-container type="text" placeholder="Enter text" name="first_name">
+                    <input id="first_name" value="{{form_data.first_name}}" class = input-container type="text" placeholder="Enter your first name" name="first_name">
                 </div>
                 <div class = "input">
                     <label for="last_name">Last Name</label>
-                    <input value="{{form_data.last_name}}" class = input-container type="text" placeholder="Enter text" name="last_name">
+                    <input id="last_name" value="{{form_data.last_name}}" class = input-container type="text" placeholder="Enter your last name" name="last_name">
                 </div>
                 <div class = "input">
                     <label for="account">Username</label>
-                    <input value="{{form_data.account}}" class = input-container type="text" placeholder="Enter text" name="account">
+                    <input id="account" value="{{form_data.account}}" class = input-container type="text" placeholder="Enter your username" name="account">
                 </div>
                 <div class = "input">
                     <label for="email">Email</label>
-                    <input value="{{form_data.email}}" class = input-container type="text" placeholder="Enter text" name="email">
+                    <input id="email" value="{{form_data.email}}" class = input-container type="text" placeholder="Enter your email" name="email">
                 </div>   
                 <div class = "input">
                     <label for="password">Password</label>
-                    <input value="{{form_data.password}}" class = input-container type="text" placeholder="Enter text" name="password">
+                    <input id="password" value="{{form_data.password}}" class = input-container type="text" placeholder="Enter your password" name="password">
                 </div>
                 <div class = "passChange">
                     <button style = "background-color: #43888F;" 

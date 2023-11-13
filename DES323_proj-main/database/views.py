@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import *
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 # Create your views here.
 def database_item_list_all(request):
     dataset_objs = settingtool.objects.all()
@@ -56,8 +59,48 @@ def database_login_add(request):
     }
     return render(request, 'web/login.html' , context= context_data)
 
+def signup(request):
+    if request.method == "POST":
+        fname = request.POST['first_name']
+        lname = request.POST['last_name']
+        user = request.POST['account']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        myuser = User.objects.create_user(user, password)
+        myuser.first_name = fname
+        myuser.last_name = lname
+        myuser.save()
+
+        messages.success(request, "Your account has been successfully created.")
+
+
+        return redirect('/home')
+    return render(request, 'web/login.html')
+
+
+def signin(request):
+
+    if request.method == 'POST':
+        username = request.POST['account']
+        password = request.POST['password']
+
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            fname = user.first_name
+            return render(request, "web/signin.html", {'fname': fname})
+
+        else:
+            messages.error(request, "Bad Credentials")
+            return redirect('/home')
+
+    return render(request, 'web/signin.html')
 
 def database_item_edit(request, id):
+
     try:
         item = userall.objects.get(id = id)
     except:
@@ -101,3 +144,9 @@ def data_sci_item_delete(request, id):
         return HttpResponse("ID Not found")
     dataset_objs.delete()
     return redirect('/login')
+
+
+def signout(request):
+    logout(request)
+    messages.success(request, "Logout")
+    return redirect('/signin')

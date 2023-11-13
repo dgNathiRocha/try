@@ -12,8 +12,6 @@ from sklearn.linear_model import LogisticRegression
 
 from .forms import UploadFileForm
 
-
-
 def index(request):
     context = {
         "title": "Django example",
