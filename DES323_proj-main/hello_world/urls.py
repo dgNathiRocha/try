@@ -34,6 +34,9 @@ urlpatterns = [
     path("database/list_item/all", database_views.database_item_list_all),
     path("database/name/edit/<id>", database_views.database_item_edit),
     path("database/name/del/<id>", database_views.data_sci_item_delete),
+    path("api/movie", database_views.api_data),
+    path("test", core_views.classification),
+    path("data", core_views.import_data),
     # CORE VIEWS
     path("", core_views.index),
     path("home", core_views.home),
@@ -42,6 +45,7 @@ urlpatterns = [
     path("visualize/classification", core_views.classification),
     path("login", database_views.database_login_add),
     path("importcsv", core_views.import_csv),
+    path("result", core_views.save),
     path("userinfo", database_views.user_name),
     path('signup', database_views.signup, name="signup"),
     path('signin', database_views.signin, name="signin"),

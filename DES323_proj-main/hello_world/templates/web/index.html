@@ -41,7 +41,7 @@ Main
     <script>
         async function refresh_visual(data) {
 
-     let salary_api = await axios.get('https://potential-memory-v6qrxq54pxpc6gwp-8000.app.github.dev/visualize/classification')
+     let salary_api = await axios.get('https://bookish-giggle-r95v7799x5v2xw74-8000.app.github.dev/test')
          .then(function (response) {
              return response.data;
         });
@@ -70,11 +70,10 @@ Main
         ]
     })
     
-    const div = document.getElementById('visual');
+    const div = document.getElementById('visual'); 
     div.append(plot);
 }
-
-        
+       
         refresh_visual();
     </script>
     <div class="container-fluid index-body">
@@ -93,7 +92,10 @@ Main
 
                 <div class="dragbg2">
                     <label class="font1">Upload Your Dataset</label>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
                     <input class= "uploadFile" id="fileInput" name="file" accept=".csv, .json" type="file">
+                </form>
                 </div>
                 
                 <script>
@@ -148,34 +150,8 @@ Main
                 <div class="desktop-homepage">
                     <div class="fillfield" id = "visual">
                       <!-- D3 Visualization is HERE -->
-                      <div>
-                        <canvas id="myChart"></canvas>
-                      </div>
                       
-                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                       
-                      <script>
-                        const ctx = document.getElementById('myChart');
-                      
-                        new Chart(ctx, {
-                          type: 'bar',
-                          data: {
-                            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                            datasets: [{
-                              label: '# of Votes',
-                              data: [12, 19, 3, 5, 2, 3],
-                              borderWidth: 1
-                            }]
-                          },
-                          options: {
-                            scales: {
-                              y: {
-                                beginAtZero: true
-                              }
-                            }
-                          }
-                        });
-                      </script>
                     </div>
                 </div>
             </div>

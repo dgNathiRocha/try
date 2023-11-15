@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+import requests
 # Create your views here.
 def database_item_list_all(request):
     dataset_objs = settingtool.objects.all()
@@ -42,7 +44,7 @@ def database_login_add(request):
 
         )
         try:
-            new_item. save()
+            new_item.save()
         except:
             return HttpResponse ("ERROR!" )
         return redirect ('/home')
@@ -150,3 +152,11 @@ def signout(request):
     logout(request)
     messages.success(request, "Logout")
     return redirect('/signin')
+
+
+
+def api_data(request):
+    api_url="https://api.themoviedb.org/3/search/movie?api_key=5395578a0f7c6ad459be7ddae34b26c7&query=Harry Potter"
+    response= requests.get(api_url)
+    print(response.json())
+    return JsonResponse(response.json())
