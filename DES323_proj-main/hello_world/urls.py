@@ -45,7 +45,6 @@ urlpatterns = [
     path("visualize/classification", core_views.classification),
     path("login", database_views.database_login_add),
     path("importcsv", core_views.import_csv),
-    path("result", core_views.save),
     path("userinfo", database_views.user_name),
     path('signup', database_views.signup, name="signup"),
     path('signin', database_views.signin, name="signin"),

@@ -137,34 +137,4 @@ def chart_data(request):
     return render(request, 'index.html',
                   {'data': data})
 
-def save(request):
-
-    context={}
-    
-    if request.method == "POST":
-        upload_file = request.FILES['file']
-
-        if upload_file.name.endswith('.csv'):
-            savefile = FileSystemStorage()
-            name = savefile.save(uploaded_file.name, uploaded_file)
-            
-            d= os.getcwd()
-            file_directory = d+'\media\\'+name
-            return redirect('')
-        
-
-    return render(request, 'index.html')
-
-def readfile(filename):
-    my_file = pd.read_csv(filename, sep='[:;,|_]', engine='python')
-    data = pd.DataFrame(data=my_file, index= None)
-
-    rows = len(data.axes[0])
-    columns = len(data.axes[1])
-
-    missingsigns = ['?', '0', '--', '-', ' ']
-    null_data = data[data.isnull().any(axis=1)]
-
-    missing_values = len(null_data)
-
 

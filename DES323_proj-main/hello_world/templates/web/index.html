@@ -38,44 +38,14 @@ Main
     </script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
-    <script>
-        async function refresh_visual(data) {
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 
-     let salary_api = await axios.get('https://bookish-giggle-r95v7799x5v2xw74-8000.app.github.dev/test')
-         .then(function (response) {
-             return response.data;
-        });
-
-    // let salary_api = data;
-    let salaryall = [];
-    let predicts = [];
-
-    salary_api['salaries'].forEach((data, index) => {
-        let real_obj = {
-            "salaries": data,
-            "position": salary_api['position'][index]
-        }
-        let pred_obj = {
-            "salaries": data,
-            "position": salary_api['position'][index]
-        }
-        salaryall.push(real_obj);
-        predicts.push(pred_obj);
-    });
-
-    const plot = Plot.plot({
-        marks: [
-            Plot.dotY(salaryall, { x: "salaries", y: "position", tip: "x", stroke: "red" }),
-            Plot.dotY(predicts, { x: "salaries", y: "position", tip: "x", stroke: "blue" }),
-        ]
-    })
     
-    const div = document.getElementById('visual'); 
-    div.append(plot);
-}
-       
-        refresh_visual();
-    </script>
+    <script type="text/javascript" src="{% static 'graphjs/horizontal.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/histogram.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/piechart.js'%}"></script>
+
+
     <div class="container-fluid index-body">
         <div class="container-fluid index-context">
             <div class="web-topic">
@@ -119,17 +89,16 @@ Main
                 </div>
                 <label>Choose your visualizing method</label>
             </div>
-            <div class="choices" onclick="refresh_visual()">
-                <div class="subchoice">
+            <div class="choices">
+                <div class="subchoice" onclick="drawVerticalHistogram()">
                     <img class="bar-chart" src="{% static 'bar-chart-01.png' %}" />
-                    <label>Histogram</label> 
-                    
+                    <label>Histogram</label>  
                 </div>  
-                <div class="subchoice" onclick="refresh_visual()">
+                <div class="subchoice" onclick="horizontalhis()">
                     <img class="bar-chart" src="{% static 'bar-chart-02.png' %}" />
                     <label>Horizontal Histogram</label>
                 </div>  
-                <div class="subchoice" onclick="refresh_visual()">
+                <div class="subchoice" onclick="PieChart()">
                     <img class="bar-chart" src="{% static 'pie-chart-01.png' %}" />
                     <label>Pie Chart</label>
                 </div>  
@@ -141,10 +110,7 @@ Main
                     <img class="bar-chart" src="{% static 'dotgraph.png' %}" />
                     <label>Dot Chart</label>
                 </div>  
-                    <div class="subchoice" onclick="refresh_visual()">
-                    <img class="logistic" src="{% static 'logistic.png' %}" />
-                    <label>Logistic Regression</label>
-                </div>  
+        
             </div>
             <div class="web-topic">
                 <div class="desktop-homepage">
