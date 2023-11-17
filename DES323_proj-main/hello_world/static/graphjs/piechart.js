@@ -28,7 +28,7 @@ async function PieChart() {
         .append("svg")
         .attr("width", width)
         .attr("height", height)
-        .attr("background-color", "#222222") // Add background color
+        .style("background-color", "#222222") // Add background color
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
   
@@ -36,7 +36,8 @@ async function PieChart() {
       const pie = d3.pie().value((d) => d.voteAverage).sort(null);
   
       // Create the arcs for the pie chart
-      const arc = d3.arc().innerRadius(50).outerRadius(radius);
+      const arc = d3.arc().innerRadius(0).outerRadius(radius);
+      
   
       // Calculate percentages for each slice
       const total = data.reduce((acc, d) => acc + d.voteAverage, 0);
@@ -51,7 +52,7 @@ async function PieChart() {
         .enter()
         .append("path")
         .attr("d", arc)
-        .style("fill", (d, i) => d3.schemeCategory10[i]); // Use different colors for each slice
+        .style("fill", (d, i) => d3.schemeCategory20[i % 20]); // Use different colors for each slice
   
       // Add percentage labels to each slice
       svg
@@ -60,7 +61,7 @@ async function PieChart() {
         .enter()
         .append("text")
         .attr("text-anchor", "middle")
-        .attr("dy", "20") // Adjust label position as needed
+        .attr("dy", "0.35em") // Adjust label position as needed
         .attr("transform", (d, i) => "translate(" + arc.centroid(d) + ")")
         .text((d) => `${d.data.percentage.toFixed(2)}%`);
     } catch (error) {

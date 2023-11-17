@@ -44,6 +44,8 @@ Main
     <script type="text/javascript" src="{% static 'graphjs/horizontal.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/histogram.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/piechart.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/linechart.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/dotchart.js'%}"></script>
 
 
     <div class="container-fluid index-body">
@@ -102,11 +104,11 @@ Main
                     <img class="bar-chart" src="{% static 'pie-chart-01.png' %}" />
                     <label>Pie Chart</label>
                 </div>  
-                <div class="subchoice" onclick="refresh_visual()">
+                <div class="subchoice" onclick="lineChart()">
                     <img class="bar-chart" src="{% static 'graph-increase.png' %}" />
                     <label>Line Chart</label>
                 </div>  
-                <div class="subchoice" onclick="refresh_visual()">
+                <div class="subchoice" onclick="dotChart()">
                     <img class="bar-chart" src="{% static 'dotgraph.png' %}" />
                     <label>Dot Chart</label>
                 </div>  

@@ -32,6 +32,7 @@ async function drawVerticalHistogram() {
             .domain([0, d3.max(data, d => d.voteAverage)])
             .range([height, 0]);
 
+            
         // Draw bars
         svg.selectAll("rect")
             .data(data)
