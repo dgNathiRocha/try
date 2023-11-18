@@ -1,0 +1,25 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+
+{% block title %}
+Horizontal Histogram
+{% endblock %}
+{% block content %}
+
+<body>
+    <div class = "index-body">
+        <a class="nav-link active" aria-current="page" href="/home">Back</a>
+        <div class = "index-context setting-context"  style="text-align: center; align-items: center;">
+            
+            
+
+            <h1 id="home-text">Bubble Chart</h1>
+            <img src="../static/chart_bubble.png" alt="Your Image Alt Text" width="500" height="300">
+            <p>A multi-variable graph that combines elements of a proportional area chart and a scatterplot is called a bubble chart.
+
+                Similar to a scatterplot, a bubble chart plots points along a grid where the X and Y axes are independent variables using a Cartesian coordinate system. In contrast to a scatterplot, each point has a label or category given to it, which can be shown next to the point or on a legend. Afterwards, the area of each plotted point's circle represents a third variable. Additionally, colors can be used to indicate additional data variables or to differentiate across groups. Time can be displayed by animating the data variables to change over time, or by having it as a variable on one of the axes.</p>
+            
+        </div>
+    </div>
+</body>
+{% endblock %}

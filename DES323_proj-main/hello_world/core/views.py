@@ -38,6 +38,34 @@ def login(request):
     context = {"title": "Login"}
     return render(request, "web/login.html",context)
 
+def horizon(request):
+    context = {
+        "title": "Django example",
+    }
+    return render(request, "web/contentinfo/horizontalhistogram.html", context)
+
+
+def mapchart(request):
+    context = {
+        "title": "Django example",
+    }
+    return render(request, "web/contentinfo/mapchart.html", context)
+
+def bubblechart(request):
+    context = {
+        "title": "Django example",
+    }
+    return render(request, "web/contentinfo/bubblechart.html", context)
+
+def boxchart(request):
+    context = {
+        "title": "Django example",
+    }
+    return render(request, "web/contentinfo/boxchart.html", context)
+
+
+
+
 def import_data_csv(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)

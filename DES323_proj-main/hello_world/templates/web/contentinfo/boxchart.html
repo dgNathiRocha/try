@@ -1,0 +1,24 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+
+{% block title %}
+Horizontal Histogram
+{% endblock %}
+{% block content %}
+
+<body>
+    <div class = "index-body">
+        <a class="nav-link active" aria-current="page" href="/home">Back</a>
+        <div class = "index-context setting-context"  style="text-align: center; align-items: center;">
+            
+            
+
+            <h1 id="home-text">Box Chart</h1>
+            <img src="../static/chart_box.png" alt="Your Image Alt Text" width="500" height="300">
+            <p>A box and whisker plot, sometimes referred to as a box plot, shows a collection of data's five-number summary. The minimum, first quartile, median, third quartile, and maximum make up the five-number summary.
+                A box is drawn in a box plot from the first to the third quartile. At the median, a vertical line passes through the box. The whiskers extend to the minimum or maximum at each quartile.</p>
+            
+        </div>
+    </div>
+</body>
+{% endblock %}

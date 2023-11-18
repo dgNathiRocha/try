@@ -49,6 +49,11 @@ urlpatterns = [
     path('signup', database_views.signup, name="signup"),
     path('signin', database_views.signin, name="signin"),
     path('signout', database_views.signout, name="signout"),
+    path('horizontalhistogram', core_views.horizon),
+    path('map', core_views.mapchart),
+    path('bubblechart', core_views.bubblechart),
+    path('boxchart', core_views.boxchart),
+
 
 ]
 

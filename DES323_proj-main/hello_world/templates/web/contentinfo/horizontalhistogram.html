@@ -8,38 +8,17 @@ Horizontal Histogram
 
 <body>
     <div class = "index-body">
-        <div class = "index-context setting-context">
-            <h1>Horizontal Histogram</h1>
+        <a class="nav-link active" aria-current="page" href="/home">Back</a>
+        <div class = "index-context setting-context"  style="text-align: center; align-items: center;">
+            
+            
 
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class = "input">
-                    <label for="first_name">First Name</label>
-                    <input value="{{form_data.first_name}}" class = input-container type="text" placeholder="Enter text" name="first_name">
-                </div>
-                <div class = "input">
-                    <label for="last_name">Last Name</label>
-                    <input value="{{form_data.last_name}}" class = input-container type="text" placeholder="Enter text" name="last_name">
-                </div>
-                <div class = "input">
-                    <label for="account">Username</label>
-                    <input value="{{form_data.account}}" class = input-container type="text" placeholder="Enter text" name="account">
-                </div>
-                <div class = "input">
-                    <label for="email">Email</label>
-                    <input value="{{form_data.email}}" class = input-container type="text" placeholder="Enter text" name="email">
-                </div>   
-                <div class = "input">
-                    <label for="password">Password</label>
-                    <input value="{{form_data.password}}" class = input-container type="text" placeholder="Enter text" name="password">
-                </div>
-                <div class = "passChange">
-                    <button style = "background-color: #43888F;" 
-                        onClick="console.log('Logging In')">Log in</button>
-                    <button style = "background-color: #DEF0F2; color:black" 
-                        onClick="console.log('Register')">Register</button>
-                </div>
-            </form>
+            <h1 id="home-text">Horizontal Histogram</h1>
+            <img src="../static/chart_horbar.jpg" alt="Your Image Alt Text" width="500" height="300">
+            <p>In statistics, a histogram is representation of the distribution of numerical data, where the data are binned and the count for each bin is represented. More generally, in Plotly a histogram is an aggregated bar chart, with several possible aggregation functions (e.g. sum, average, count...) which can be used to visualize data on categorical and date axes as well as linear axes.
+
+                Alternatives to histogram plots for visualizing distributions include violin plots, box plots, ECDF plots and strip charts.</p>
+            
         </div>
     </div>
 </body>
