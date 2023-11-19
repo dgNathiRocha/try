@@ -45,6 +45,11 @@
   justify-content: center;
 }
 
+.back-arrow {
+  font-size: 20px;
+  color: #2222; /* Change the color to your preference */
+  cursor: pointer;
+}
 
 
 #home-text{
@@ -159,14 +164,3 @@
     justify-content: space-around;
   }
 
-
-  #photohis {
-    height:50vh;
-    width:95vw;
-    background-image: url("../static/events.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    border:0;
-    padding: 0;
-  }
-  

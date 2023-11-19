@@ -21,21 +21,6 @@ Main
         // var data = {{ json_output|safe }};
     }
     </script>
-    <script>
-        function fetch_data() {
-            fetch('https://potential-memory-v6qrxq54pxpc6gwp-8000.app.github.dev/visualize/classification')
-            .then(response=> response.json())
-            .then(data=>{
-                let weather_div = document.getElementById('weathers');
-                weather_div.innerHTML = JSON.stringify(data);
-                // create visualization right after cuz we got no choice now
-                refresh_visual()
-            })
-            .catch(error =>{
-                console.error("Error Fetching",error);
-            })
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -46,6 +31,7 @@ Main
     <script type="text/javascript" src="{% static 'graphjs/piechart.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/linechart.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/dotchart.js'%}"></script>
+
 
 
     <div class="container-fluid index-body">
@@ -92,7 +78,7 @@ Main
                 <label>Choose your visualizing method</label>
             </div>
             <div class="choices">
-                <div class="subchoice" onclick="drawVerticalHistogram()">
+                <div class="subchoice" onclick="drawVerticalHistogram()" >
                     <img class="bar-chart" src="{% static 'bar-chart-01.png' %}" />
                     <label>Histogram</label>  
                 </div>  
@@ -132,8 +118,8 @@ Main
                 <label>Statistic Summary</label>
             </div>
             <div class="result">
-                <div class="fillfield" id = "weathers">
-                    <h1>You do not have a file yet</h1>
+                <div class="fillfield" id = "stat">
+                   
                 </div>
                 <button onClick="console.log('Download Dataset')">Download your model</button>
             </div>

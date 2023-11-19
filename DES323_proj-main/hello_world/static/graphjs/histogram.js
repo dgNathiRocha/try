@@ -1,3 +1,5 @@
+
+
 async function drawVerticalHistogram() {
     // Create an empty container initially
     const visualContainer = d3.select("#visual").html("");
@@ -32,7 +34,6 @@ async function drawVerticalHistogram() {
             .domain([0, d3.max(data, d => d.voteAverage)])
             .range([height, 0]);
 
-            
         // Draw bars
         svg.selectAll("rect")
             .data(data)
@@ -65,6 +66,7 @@ async function drawVerticalHistogram() {
             .attr("fill", "#000")
             .text("Vote Average");
 
+       
     } catch (error) {
         console.error("Error fetching data:", error);
     }
