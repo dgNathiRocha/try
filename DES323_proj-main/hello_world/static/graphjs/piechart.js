@@ -1,6 +1,7 @@
 async function PieChart() {
     // Create an empty container initially
     const visualContainer = d3.select("#visual").html("");
+    const summaryContainer = d3.select("#stat").html("");
 
     try {
         // Fetch movie data from the API
@@ -63,6 +64,7 @@ async function PieChart() {
             .attr("dy", "0.35em")
             .attr("text-anchor", "middle")
             .text((d) => `${d.data.title}: ${d.data.percentage.toFixed(2)}%`);
+
         const averageVote = d3.mean(data, d => d.voteAverage);
         const minVote = d3.min(data, d => d.voteAverage);
         const maxVote = d3.max(data, d => d.voteAverage);
@@ -73,7 +75,6 @@ async function PieChart() {
         console.log("Maximum Vote:", maxVote);
         console.log("Standard Deviation:", stdDevVote);
 
-        const summaryContainer = d3.select("#stat").html("");
 
         summaryContainer.html(`
             <h1>Statistical Summary</h1>
