@@ -63,6 +63,25 @@ async function PieChart() {
             .attr("dy", "0.35em")
             .attr("text-anchor", "middle")
             .text((d) => `${d.data.title}: ${d.data.percentage.toFixed(2)}%`);
+        const averageVote = d3.mean(data, d => d.voteAverage);
+        const minVote = d3.min(data, d => d.voteAverage);
+        const maxVote = d3.max(data, d => d.voteAverage);
+        const stdDevVote = d3.deviation(data, d => d.voteAverage);
+
+        console.log("Average Vote:", averageVote);
+        console.log("Minimum Vote:", minVote);
+        console.log("Maximum Vote:", maxVote);
+        console.log("Standard Deviation:", stdDevVote);
+
+        const summaryContainer = d3.select("#stat").html("");
+
+        summaryContainer.html(`
+            <h1>Statistical Summary</h1>
+            <p>Average Vote: ${averageVote.toFixed(2)}</p>
+            <p>Minimum Vote: ${minVote.toFixed(2)}</p>
+            <p>Maximum Vote: ${maxVote.toFixed(2)}</p>
+            <p>Standard Deviation: ${stdDevVote.toFixed(2)}</p>
+        `);
 
     } catch (error) {
         console.error("Error fetching data:", error);

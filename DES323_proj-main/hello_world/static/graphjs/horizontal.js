@@ -1,10 +1,11 @@
 
-        async function horizontalhis() {
+async function horizontalhis() {
             // Create an empty container initially
-            const visualContainer = d3.select("#visual").html("");
-    
+    const visualContainer = d3.select("#visual").html("");
+    const summaryContainer = d3.select("#stat").html("");
 
-            try {
+
+    try {
         // Fetch movie data from the API
         const response = await axios.get('https://bookish-giggle-r95v7799x5v2xw74-8000.app.github.dev/api/movie');
         const movieData = response.data.results;
@@ -66,6 +67,25 @@
             .attr("dy", "0.71em")
             .attr("fill", "#000")
             .text("Movie Title");
+        
+        const averageVote = d3.mean(data, d => d.voteAverage);
+        const minVote = d3.min(data, d => d.voteAverage);
+        const maxVote = d3.max(data, d => d.voteAverage);
+        const stdDevVote = d3.deviation(data, d => d.voteAverage);
+    
+        console.log("Average Vote:", averageVote);
+        console.log("Minimum Vote:", minVote);
+        console.log("Maximum Vote:", maxVote);
+        console.log("Standard Deviation:", stdDevVote);
+    
+
+        summaryContainer.html(`
+            <h1>Statistical Summary</h1>
+            <p>Average Vote: ${averageVote.toFixed(2)}</p>
+            <p>Minimum Vote: ${minVote.toFixed(2)}</p>
+            <p>Maximum Vote: ${maxVote.toFixed(2)}</p>
+            <p>Standard Deviation: ${stdDevVote.toFixed(2)}</p>
+        `);
 
     } catch (error) {
         console.error("Error fetching data:", error);

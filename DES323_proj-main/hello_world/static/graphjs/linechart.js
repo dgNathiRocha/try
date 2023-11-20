@@ -1,6 +1,7 @@
 async function lineChart() {
     // Create an empty container initially
     const visualContainer = d3.select("#visual").html("");
+    const summaryContainer = d3.select("#stat").html("");
 
     try {
         // Fetch movie data from the API
@@ -88,7 +89,6 @@ async function lineChart() {
         console.log("Maximum Vote:", maxVote);
         console.log("Standard Deviation:", stdDevVote);
 
-        const summaryContainer = d3.select("#stat").html("");
 
         summaryContainer.html(`
             <h1>Statistical Summary</h1>
