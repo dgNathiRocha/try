@@ -1,11 +1,10 @@
-
 async function horizontalhis() {
             // Create an empty container initially
     const visualContainer = d3.select("#visual").html("");
     const summaryContainer = d3.select("#stat").html("");
 
-
     try {
+        
         // Fetch movie data from the API
         const response = await axios.get('https://bookish-giggle-r95v7799x5v2xw74-8000.app.github.dev/api/movie');
         const movieData = response.data.results;
