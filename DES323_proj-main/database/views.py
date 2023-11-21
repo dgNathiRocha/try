@@ -140,13 +140,20 @@ def database_item_edit(request, id):
 
 
 
-def data_sci_item_delete(request, id):
+def item_delete(request, id):
     dataset_objs = userall.objects.filter(id = id)
     if len(dataset_objs) <= 0:
         return HttpResponse("ID Not found")
     dataset_objs.delete()
     return redirect('/login')
 
+
+def item_deletetool(request, id):
+    dataset_objs = settingtool.objects.filter(id = id)
+    if len(dataset_objs) <= 0:
+        return HttpResponse("ID Not found")
+    dataset_objs.delete()
+    return redirect('/setting')
 
 def signout(request):
     logout(request)
