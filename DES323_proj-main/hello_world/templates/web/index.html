@@ -31,6 +31,7 @@ Main
     <script type="text/javascript" src="{% static 'graphjs/piechart.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/linechart.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/dotchart.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/try.js'%}"></script>
 
 
 
@@ -86,7 +87,7 @@ Main
                     <img class="bar-chart" src="{% static 'bar-chart-02.png' %}" />
                     <label>Horizontal Histogram</label>
                 </div>  
-                <div class="subchoice" onclick="PieChart()">
+                <div class="subchoice" onclick="trypie()">
                     <img class="bar-chart" src="{% static 'pie-chart-01.png' %}" />
                     <label>Pie Chart</label>
                 </div>  
@@ -119,11 +120,11 @@ Main
             </div>
             <div class="result">
                 <div class="fillfield">
-                    <div id="stat" class="fillfield">
+                    <div id="stat" class="filf">
                     <h1>You don't have a file yet</h1>
                 </div>
                 </div>
-                <button onClick="console.log('Download Dataset')">Download your model</button>
+                <button onClick="console.log('Download Dataset')"><a href="/finish" style="color:white;">Download your model</a></button>
             </div>
                 
             </div>

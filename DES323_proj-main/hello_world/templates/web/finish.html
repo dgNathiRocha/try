@@ -1,0 +1,26 @@
+{% extends 'web/layout.html' %}
+{% load static %}
+
+{% block title %}
+Horizontal Histogram
+{% endblock %}
+{% block content %}
+
+<body>
+    <div class = "index-body">
+        <a class="nav-link active" aria-current="page" href="/home"class="back-arrow">&#8592;Back</a>
+        <div class = "index-context setting-context"  style="text-align: center; align-items: center;">
+            
+            
+
+            <h1 id="home-text">Thank You for using our website!!!</h1>
+            <div class = "passChange">
+                <button style = "background-color: #DEF0F2; color:black" 
+                    onClick="console.log('Finish')"><a href="/" style="color: black"> Make a chart again</a></button>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+{% endblock %}

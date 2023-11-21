@@ -21,7 +21,7 @@ def index(request):
     return render(request, "web/index.html", context)
 
 
-def setting(request):
+#def setting(request):
     context = {
         "title": "Setting Example",
     }
@@ -33,6 +33,12 @@ def home(request):
         "title": "Home Example",
     }
     return render(request, "web/home.html",context)
+
+def finish(request):
+    context = {
+        "title": "Home Example",
+    }
+    return render(request, "web/finish.html",context)
 
 def login(request):
     context = {"title": "Login"}

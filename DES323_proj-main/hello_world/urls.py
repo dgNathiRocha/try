@@ -27,11 +27,11 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 
     # DATABASE VIEWS
-    path("setting", core_views.setting),
+    path("setting", database_views.database_item_list_all),
     path("database/name", database_views.database_all_item),
     path("home", core_views.home),
     path("import/csv", core_views.import_data_csv),
-    path("setting", database_views.database_item_list_all),
+    path("database/list_item/all", database_views.database_item_list_all),
     path("database/name/edit/<id>", database_views.database_item_edit),
     path("database/name/del/<id>", database_views.item_delete),
     path("api/movie", database_views.api_data),
@@ -53,7 +53,7 @@ urlpatterns = [
     path('map', core_views.mapchart),
     path('bubblechart', core_views.bubblechart),
     path('boxchart', core_views.boxchart),
-
+    path('finish', core_views.finish),
 
 ]
 

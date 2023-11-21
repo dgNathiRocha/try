@@ -9,8 +9,10 @@ async function fetchData() {
     return data;
 }
 
-async function PieChart() {
+async function trypie() {
     const visualContainer = d3.select("#visual");
+    const summaryContainer = d3.select("#stat").html("");
+
     try {
         const data = await fetchData();
         const totalVoteAverage = data.reduce((acc, movie) => acc + movie.voteAverage, 0);
