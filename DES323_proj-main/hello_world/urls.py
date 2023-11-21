@@ -27,6 +27,7 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 
     # DATABASE VIEWS
+    path("setting", core_views.setting),
     path("database/name", database_views.database_all_item),
     path("home", core_views.home),
     path("import/csv", core_views.import_data_csv),
