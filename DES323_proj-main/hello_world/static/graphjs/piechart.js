@@ -10,7 +10,7 @@ async function fetchData() {
 }
 
 async function PieChart() {
-    const visualContainer = d3.select("#visual");
+    const visualContainer = d3.select("#visual").html("");
     try {
         const data = await fetchData();
         const totalVoteAverage = data.reduce((acc, movie) => acc + movie.voteAverage, 0);
@@ -60,5 +60,3 @@ async function PieChart() {
         console.error("Error fetching data:", error);
     }
 }
-
-drawPieChart();
