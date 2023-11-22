@@ -10,7 +10,7 @@ async function fetchData() {
 }
 
 async function trypie() {
-    const visualContainer = d3.select("#visual");
+    const visualContainer = d3.select("#visual").html("");
     const summaryContainer = d3.select("#stat").html("");
 
     try {
@@ -62,5 +62,3 @@ async function trypie() {
         console.error("Error fetching data:", error);
     }
 }
-
-drawPieChart();
