@@ -79,11 +79,10 @@ async function horizontalhis() {
     
 
         summaryContainer.html(`
-            <h1>Statistical Summary</h1>
-            <p>Average Vote: ${averageVote.toFixed(2)}</p>
-            <p>Minimum Vote: ${minVote.toFixed(2)}</p>
-            <p>Maximum Vote: ${maxVote.toFixed(2)}</p>
-            <p>Standard Deviation: ${stdDevVote.toFixed(2)}</p>
+            <h1>Average Vote: ${averageVote.toFixed(2)}</h1>
+            <h1>Minimum Vote: ${minVote.toFixed(2)}</h1>
+            <h1>Maximum Vote: ${maxVote.toFixed(2)}</h1>
+            <h1>Standard Deviation: ${stdDevVote.toFixed(2)}</h1>
         `);
 
     } catch (error) {

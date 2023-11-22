@@ -7,6 +7,10 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 import requests
+from database.serializer import *
+from rest_framework.authtoken.models import Token
+from rest_framework.parsers import JSONParser
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def database_item_list_all(request):
     dataset_objs = settingtool.objects.all()
@@ -167,3 +171,29 @@ def api_data(request):
     response= requests.get(api_url)
     print(response.json())
     return JsonResponse(response.json())
+
+
+@csrf_exempt
+def api_register(request):
+    if request.method == "POST":
+        data = JSONParser().parse(request)
+        serializer = APIforchecking(data=data)
+
+        if serializer.is_valid():
+
+            user = User.objects.create(
+                first_name=serializer.data['first_name'],
+                last_name=serializer.data['last_name'],
+                username=serializer.data['account'],
+                email=serializer.data['email'],
+                password=serializer.data['password'],
+               
+            )
+            token, created = Token.objects.get_or_create(user=user)
+            
+            return JsonResponse({"status": "success", "token": token.key}, status=200)
+        else:
+            return JsonResponse({"status": "failed", "message": "Input not valid."})
+
+    return JsonResponse({"status": "failed", "message": "Method not allowed."}, status=400)
+

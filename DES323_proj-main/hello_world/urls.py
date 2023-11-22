@@ -37,6 +37,9 @@ urlpatterns = [
     path("api/movie", database_views.api_data),
     path("test", core_views.classification),
     path("data", core_views.import_data),
+    path('api/json', database_views.api_register),
+
+
     # CORE VIEWS
     path("", core_views.index),
     path("home", core_views.home),
@@ -54,7 +57,6 @@ urlpatterns = [
     path('bubblechart', core_views.bubblechart),
     path('boxchart', core_views.boxchart),
     path('finish', core_views.finish),
-
 ]
 
 if settings.DEBUG:
