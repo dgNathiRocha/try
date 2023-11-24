@@ -41,3 +41,14 @@ class userall(models.Model):
     email =  models.CharField(max_length=255)
     password  = models.CharField(max_length=255)
 
+class sleephealth(models.Model):
+    personID = models.IntegerField()
+    age = models.CharField(max_length=255)
+    occupation = models.CharField(max_length=255)
+    sleep_duration = models.IntegerField()
+    quality_sleep = models.IntegerField()
+    bmi_category = models.CharField(max_length=255)
+    heart_rate = models.IntegerField()
+    daily_step = models.IntegerField()
+    sleep_disorder = models.CharField(max_length=255)
+    

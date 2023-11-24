@@ -38,8 +38,7 @@ urlpatterns = [
     path("test", core_views.classification),
     path("data", core_views.import_data),
     path('api/json', database_views.api_register),
-
-
+    path("api/health", database_views.import_csvhealth),
     # CORE VIEWS
     path("", core_views.index),
     path("home", core_views.home),

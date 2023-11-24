@@ -7,10 +7,14 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 import requests
+from database.models import sleephealth
 from database.serializer import *
 from rest_framework.authtoken.models import Token
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
+import pandas as pd
+
+
 # Create your views here.
 def database_item_list_all(request):
     dataset_objs = settingtool.objects.all()
@@ -197,3 +201,29 @@ def api_register(request):
 
     return JsonResponse({"status": "failed", "message": "Method not allowed."}, status=400)
 
+
+
+def import_csvhealth(request):
+    csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS1ic9fLIWFVGu_Y7IUQ4fUkAsEPEjHjOJutnaRvx69rWzyxa0r90_Uzq6E0K2RDs3m5s1FpDfNuBJB/pub?output=csv"
+    df = pd.read_csv(csv_url)
+    data_sets = df[["Person ID", "Age", "Occupation", "Sleep Duration", "Quality of Sleep", "BMI Category", "Heart Rate", "Daily Steps", "Sleep Disorder"]]
+    success = []
+    errors = []
+    for index, row in data_sets.iterrows():
+        instance = sleephealth(
+            personID = int(row['Person ID']),
+            age = int(row['Age']),
+            occupation = row['Occupation'],
+            sleep_duration = int(row['Sleep Duration']),
+            quality_sleep = int(row['Quality of Sleep']),
+            bmi_category = row['BMI Category'],
+            heart_rate = int(row['Heart Rate']),
+            daily_step = int(row['Daily Steps']),
+            sleep_disorder = row['Sleep Disorder']
+        )
+        try:
+            instance.save()
+            success.append(index)
+        except:
+            errors.append(index)
+    return JsonResponse({"success_indexs":success, "error_indexs":errors})

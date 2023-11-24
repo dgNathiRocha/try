@@ -24,3 +24,7 @@ class settingtoolAdmin(admin.ModelAdmin):
 @admin.register(userall)
 class userallAdmin(admin.ModelAdmin):
     pass
+    
+@admin.register(sleephealth)
+class sleephealthAdmin(admin.ModelAdmin):
+    pass
