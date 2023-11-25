@@ -84,10 +84,10 @@ async function lineChartstock() {
 
 
         summaryContainer.html(`
-            <h2>Average Closing Price: ${averageClose.toFixed(2)}</h2>
-            <h2>Minimum Closing Price: ${minClose.toFixed(2)}</h2>
-            <h2>Maximum Closing Price: ${maxClose.toFixed(2)}</h2>
-            <h2>Standard Deviation: ${stdDevClose.toFixed(2)}</h2>
+            <h1>Average Closing Price: ${averageClose.toFixed(2)}</h1>
+            <h1>Minimum Closing Price: ${minClose.toFixed(2)}</h1>
+            <h1>Maximum Closing Price: ${maxClose.toFixed(2)}</h1>
+            <h1>Standard Deviation: ${stdDevClose.toFixed(2)}</h1>
         `);
 
     } catch (error) {
