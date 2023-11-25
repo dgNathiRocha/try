@@ -1,6 +1,7 @@
-async function lineCharth() {
+async function lineChartstock() {
     // Create an empty container initially
     const visualContainer = d3.select("#visual").html("");
+    const summaryContainer = d3.select("#stat").html("");
 
     try {
         // Fetch stock data from the API
@@ -71,6 +72,23 @@ async function lineCharth() {
             .attr("dy", "1em")
             .style("text-anchor", "middle")
             .text("Closing Price");
+        const averageClose = d3.mean(data, d => d.close);
+        const minClose = d3.min(data, d => d.close);
+        const maxClose = d3.max(data, d => d.close);
+        const stdDevClose = d3.deviation(data, d => d.close);
+
+        console.log("Average Closing Price:", averageClose);
+        console.log("Minimum Closing Price:", minClose);
+        console.log("Maximum Closing Price:", maxClose);
+        console.log("Standard Deviation:", stdDevClose);
+
+
+        summaryContainer.html(`
+            <h2>Average Closing Price: ${averageClose.toFixed(2)}</h2>
+            <h2>Minimum Closing Price: ${minClose.toFixed(2)}</h2>
+            <h2>Maximum Closing Price: ${maxClose.toFixed(2)}</h2>
+            <h2>Standard Deviation: ${stdDevClose.toFixed(2)}</h2>
+        `);
 
     } catch (error) {
         console.error("Error fetching data:", error);
