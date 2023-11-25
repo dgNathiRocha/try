@@ -33,6 +33,8 @@ Main
     <script type="text/javascript" src="{% static 'graphjs/dotchart.js'%}"></script>
     <script type="text/javascript" src="{% static 'graphjs/try.js'%}"></script>
 
+    <script type="text/javascript" src="{% static 'graphjs/linecharthealth.js'%}"></script>
+    <script type="text/javascript" src="{% static 'graphjs/histohealth.js'%}"></script>
 
 
     <div class="container-fluid index-body">
@@ -79,7 +81,7 @@ Main
                 <label>Choose your visualizing method</label>
             </div>
             <div class="choices">
-                <div class="subchoice" onclick="drawVerticalHistogram()" >
+                <div class="subchoice" onclick="histohealth()" >
                     <img class="bar-chart" src="{% static 'bar-chart-01.png' %}" />
                     <label>Histogram</label>  
                 </div>  
@@ -91,7 +93,7 @@ Main
                     <img class="bar-chart" src="{% static 'pie-chart-01.png' %}" />
                     <label>Pie Chart</label>
                 </div>  
-                <div class="subchoice" onclick="lineChart()">
+                <div class="subchoice" onclick="lineCharth()">
                     <img class="bar-chart" src="{% static 'graph-increase.png' %}" />
                     <label>Line Chart</label>
                 </div>  

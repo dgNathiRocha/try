@@ -43,7 +43,7 @@ class userall(models.Model):
 
 class sleephealth(models.Model):
     personID = models.IntegerField()
-    age = models.CharField(max_length=255)
+    age = models.IntegerField()
     occupation = models.CharField(max_length=255)
     sleep_duration = models.IntegerField()
     quality_sleep = models.IntegerField()

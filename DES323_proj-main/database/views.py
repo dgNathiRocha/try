@@ -227,3 +227,10 @@ def import_csvhealth(request):
         except:
             errors.append(index)
     return JsonResponse({"success_indexs":success, "error_indexs":errors})
+
+
+def api_stock(request):
+    api_url="https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=full&apikey=demo"
+    response= requests.get(api_url)
+    print(response.json())
+    return JsonResponse(response.json())
